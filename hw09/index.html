@@ -238,12 +238,11 @@
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      <video id="video1" style="width:100%;max-width:100%;" controls="">
-        <source src="./src/112c71014.mp4" type="video/mp4">
-      </video>
+      <div class="aspect-ratio">
+        <iframe src="https://youtu.be/g9njlvI5Jl0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
     </div>
   </div>
-
   <!-- ------------------------------------------------>
 
   <!-- ------------------------------------------------>
@@ -263,7 +262,6 @@
   d3.select("#myCheckbox4").on("change",update);
   d3.select("#myCheckbox5").on("change",update);
   d3.select("#myCheckbox6").on("change",update);
-  d3.select("#myCheckbox7").on("change",update);
 
   update();
   
@@ -281,6 +279,17 @@
 
     if (d3.select("#myCheckbox3").property("checked")){
       score += parseInt(d3.select('#m3').html());   
+    }
+    if (d3.select("#myCheckbox4").property("checked")){
+      score += parseInt(d3.select('#m4').html());
+    }
+
+    if (d3.select("#myCheckbox5").property("checked")){
+      score += parseInt(d3.select('#m5').html());   
+    }
+
+    if (d3.select("#myCheckbox6").property("checked")){
+      score += parseInt(d3.select('#m6').html());   
     }
 
     d3.select("#myTotal").html(score);    
