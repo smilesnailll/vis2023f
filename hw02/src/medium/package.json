@@ -1,0 +1,14 @@
+{
+  "name": "9a49d169cf9eab74",
+  "main": "9a49d169cf9eab74@23.js",
+  "version": "23.0.0",
+  "homepage": "https://observablehq.com/d/9a49d169cf9eab74",
+  "author": {
+    "name": "smilesnailll's Workspace",
+    "url": "https://observablehq.com/@smilesnailll-ws"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}
