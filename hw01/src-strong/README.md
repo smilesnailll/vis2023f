@@ -1,6 +1,6 @@
-# Zoom to bounding box
+# Grouped bar chart
 
-https://observablehq.com/@d3/zoom-to-bounding-box@182
+https://observablehq.com/@d3/grouped-bar-chart/2@776
 
 View this notebook in your browser by running a web server in this folder. For
 example:
@@ -14,14 +14,14 @@ import this module directly into your application. To npm install:
 
 ~~~sh
 npm install @observablehq/runtime@5
-npm install https://api.observablehq.com/d/416392da175798b4@182.tgz?v=3
+npm install https://api.observablehq.com/d/d0b2c4b181688705@776.tgz?v=3
 ~~~
 
 Then, import your notebook and the runtime as:
 
 ~~~js
 import {Runtime, Inspector} from "@observablehq/runtime";
-import define from "@d3/zoom-to-bounding-box";
+import define from "@d3/grouped-bar-chart/2";
 ~~~
 
 To log the value of the cell named “foo”:

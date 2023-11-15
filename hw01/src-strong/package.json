@@ -1,8 +1,8 @@
 {
-  "name": "@d3/zoom-to-bounding-box",
-  "main": "416392da175798b4@182.js",
-  "version": "182.0.0",
-  "homepage": "https://observablehq.com/@d3/zoom-to-bounding-box",
+  "name": "@d3/grouped-bar-chart/2",
+  "main": "d0b2c4b181688705@776.js",
+  "version": "776.0.0",
+  "homepage": "https://observablehq.com/@d3/grouped-bar-chart/2",
   "author": {
     "name": "D3",
     "url": "https://observablehq.com/@d3"
