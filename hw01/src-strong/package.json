@@ -1,11 +1,11 @@
 {
-  "name": "@d3/stacked-bar-chart/2",
-  "main": "6043409fcfc0bfef@717.js",
-  "version": "717.0.0",
-  "homepage": "https://observablehq.com/@d3/stacked-bar-chart/2",
+  "name": "77b21aa9b678655a",
+  "main": "77b21aa9b678655a@113.js",
+  "version": "113.0.0",
+  "homepage": "https://observablehq.com/d/77b21aa9b678655a",
   "author": {
-    "name": "D3",
-    "url": "https://observablehq.com/@d3"
+    "name": "smilesnailll's Workspace",
+    "url": "https://observablehq.com/@smilesnailll-ws"
   },
   "type": "module",
   "peerDependencies": {
