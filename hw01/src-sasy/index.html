@@ -14,10 +14,36 @@
 </head>
  
 <body>
-    <button type="button" onclick="tableToCSV()">
-        download CSV
-    </button>
-
+<!--     <center>
+        <h1 style="color:green">GeeksForGeeks</h1>
+        <h2>Table to CSV converter</h2>
+        <table border="1" cellspacing="0" cellpadding="10">
+            <tr>
+                <th>Name</th>
+                <th>age</th>
+                <th>place</th>
+            </tr>
+            <tr>
+                <td>Laxman</td>
+                <td>19</td>
+                <td>Hyderabad</td>
+            </tr>
+            <tr>
+                <td>Dhoni</td>
+                <td>22</td>
+                <td>Ranchi</td>
+            </tr>
+            <tr>
+                <td>Kohli</td>
+                <td>25</td>
+                <td>Delhi</td>
+            </tr>
+        </table> -->
+        <br><br>
+        <button type="button" onclick="tableToCSV()">
+            download CSV
+        </button>
+    </center>
  
     <script type="text/javascript">
 
@@ -47,29 +73,42 @@ a3 = createArray(121, 13); // [new Array(2),
                    //  new Array(2)]
 //alert(a3);
 
-a3[0] = ['序號', '班級', '學號', '姓名', 'GitHub 帳號', '作業一', '作業二', '作業三', '作業四', '作業五', '作業六', '作業七', '作業八', '作業九', '作業十']
-studentClass=['資工四', '資工三', '資工碩三', '資工碩二', '資工碩一', '電資四', '電資三', '互動碩二', '電資AI碩二', '電資AI碩一', '創新AI碩二', '創新AI碩一', '電資資安碩一', '創新資安碩一', '二資陸生二', '二資港生二']
-studentID=['108590', '110590', '110598', '111598', '112598', '109820', '110820', '111AC8', '111C52','112C52', '111C71', '112C71', '112C53', '112C72', '110AEM', '110AEM']
+var classOptions = ["資工系", "資工所", "電資AI", "電資資安", "創新AI"];
+
+// 随机选择一个班级
+var randomClass = classOptions[Math.floor(Math.random() * classOptions.length)];
+
+a3[0] = ['序號', '班級', '學號', '姓名', 'GitHub', '作業一', '作業二', '作業三', '作業四', '作業五', '作業六', '作業七', '作業八', '作業九', '作業十']
+
 for (var i = 1; i < a3.length; i++) {
-    a3[i][0] = i;
-    rand = Math.floor(Math.random() * 16)
-    a3[i][1] = studentClass[rand];
-    stuID = String(1000+Math.floor(Math.random() * 999))
-    a3[i][2] = studentID[rand] + stuID[1]+stuID[2]+stuID[3];
+    a3[i][0] = i; //序號
+
+    var randomClass = classOptions[Math.floor(Math.random() * classOptions.length)];
+    a3[i][1] = randomClass;
+
+    // 生成符合规定格式的学号
+    var random1to3 = Math.floor(Math.random() * 2) + 111; // 随机1-3碼: 111 或 112
+    var random4to6 = ["590", "598", "C52", "C53", "C71"][Math.floor(Math.random() * 5)]; // 随机4-6碼
+    var random7to9 = (Math.floor(Math.random() * 999) + 1).toString().padStart(3, '0'); // 随机7-9碼: 001-999
+    a3[i][2] = `${random1to3}${random4to6}${random7to9}`; // 學號
+
+    //a3[i][1] = '路人甲'; // 4E00-9FFF
+    //a3[i][1] = String.fromCharCode(0x6771);
     a3[i][3] = String.fromCharCode(Math.floor(Math.random() * 0x51ff + 0x4e00)) +
                String.fromCharCode(Math.floor(Math.random() * 0x51ff + 0x4e00)) +
-               String.fromCharCode(Math.floor(Math.random() * 0x51ff + 0x4e00));
+               String.fromCharCode(Math.floor(Math.random() * 0x51ff + 0x4e00)); //姓名
+    
     
     //a3[i][2] = 'github';
     // https://stackoverflow.com/questions/1349404/generate-random-string-characters-in-javascript
     // Math.random() 會回傳一個偽隨機小數 (pseudo-random) 介於 0 到 1 之間(包含 0，不包含 1) 
     // str.substring(indexStart[, indexEnd])
     // number.toString(radix) 10個數字 + 26個英文字母 = 36
-    a3[i][4] = (Math.random() + 1).toString(36).substring(2);
+    a3[i][4] = (Math.random() + 1).toString(36).substring(2); //github
 
     
     for (var j = 5; j < a3[0].length; j++) {
-        a3[i][j] = Math.floor(Math.random() * 10);
+        a3[i][j] = Math.floor(Math.random() * 10); //作業分數
     }
 }
 //alert(a3);
