@@ -150,46 +150,9 @@ function _chart(d3,data)
   // ------------------------------------------------------
   cell.on("mouseover", handleMouseOver)
       .on("mouseout", handleMouseOut);
-
-  cell.append("rect")
-      .attr("fill", d => color(d.data[0]))
-      .attr("fill-opacity", (d, i) => d.value / d.parent.value)
-      .attr("width", d => d.x1 - d.x0 - 1)
-      .attr("height", d => d.y1 - d.y0 - 1);
-  
-  cell.append("text")
-      .attr("x", 3)
-      .attr("y", "1.1em")
-      .text(d => {
-          if(d.data[0] === "不清楚，需要更多資訊。") {
-              return "不清楚";
-          }
-          return d.data[0];
-      });
-  
-  cell.append("text")
-      .attr("x", 3)
-      .attr("y", "2.3em")
-      .attr("fill-opacity", 0.7)
-      .text(d => format(d.value));
   
   // 定義滑鼠懸停事件處理函數
   function handleMouseOver(event, d) {
-    // 在這裡定義滑鼠懸停時的行為
-
-    // 顯示相關信息
-    const tooltip = d3.select("body")
-        .append("div")
-        .attr("class", "tooltip")
-        .style("opacity", 0);
-
-    tooltip.transition()
-        .duration(200)
-        .style("opacity", 0.9);
-
-    tooltip.html(`Category: ${d.data[0]}<br>Value: ${format(d.value)}`)
-        .style("left", event.pageX + "px")
-        .style("top", event.pageY - 28 + "px");
 
     // 放大元素
     d3.select(event.target)
@@ -250,7 +213,7 @@ export default function define(runtime, observer) {
   const main = runtime.module();
   function toString() { return this.url; }
   const fileAttachments = new Map([
-    ["artist.csv", {url: new URL("./files/artist.csv", import.meta.url), mimeType: "text/csv", toString}]
+    ["artist.csv", {url: new URL("./files/50c5f49fe0be94803e1d055aaca895517461971b40fc91cc553044dee88321c73843858f823684904e961847c7cc5d3bb60f8ecd7cdfde293dd65a61d08e1e2d.csv", import.meta.url), mimeType: "text/csv", toString}]
   ]);
   main.builtin("FileAttachment", runtime.fileAttachments(name => fileAttachments.get(name)));
   main.variable(observer()).define(["md"], _1);
